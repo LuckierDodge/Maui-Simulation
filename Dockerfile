@@ -40,11 +40,9 @@ RUN git clone https://github.com/PBSPro/pbspro.git && \
         chmod 4755 /opt/pbs/sbin/pbs_iff /opt/pbs/sbin/pbs_rcp
 
 # Maui (there are no tags, so using commit ID for pinning)
-COPY maui.diff .
-
 RUN git clone https://github.com/LuckierDodge/maui.git && \
         cd maui && \
-        git checkout ef2237e && \
+#        git checkout ef2237e && \
         ./configure --with-pbs=/opt/pbs && \
         make install -j 4
 
