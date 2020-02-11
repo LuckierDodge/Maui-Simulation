@@ -44,8 +44,7 @@ COPY maui.diff .
 
 RUN git clone https://github.com/LuckierDodge/maui.git && \
         cd maui && \
-        git checkout 59e2063 && \
-        patch -p1 < ../maui.diff && \
+        git checkout ef2237e && \
         ./configure --with-pbs=/opt/pbs && \
         make install -j 4
 
