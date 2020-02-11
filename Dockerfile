@@ -42,7 +42,7 @@ RUN git clone https://github.com/PBSPro/pbspro.git && \
 # Maui (there are no tags, so using commit ID for pinning)
 COPY maui.diff .
 
-RUN git clone https://github.com/LabAdvComp/maui.git && \
+RUN git clone https://github.com/LuckierDodge/maui.git && \
         cd maui && \
         git checkout 59e2063 && \
         patch -p1 < ../maui.diff && \
@@ -50,7 +50,7 @@ RUN git clone https://github.com/LabAdvComp/maui.git && \
         make install -j 4
 
 # Setup user
-RUN useradd -ms /bin/bash userx
+RUN useradd -ms /bin/bash userx -u 1001
 RUN chown -R userx:userx /var/run/postgresql/
 RUN echo "export LD_LIBRARY_PATH=/opt/pbs/lib" >> /home/userx/.profile && \
         echo "export PATH=$PATH:/usr/local/maui/bin" >> /home/userx/.profile && \

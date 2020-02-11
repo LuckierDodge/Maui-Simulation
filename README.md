@@ -1,3 +1,8 @@
+# Modified Maui Container for ALCF Job Reservation Impact Analysis
+
+This is a fork of the IT4Innovations repository for running the Maui Simulator in a docker container. The original README with instructions is included below. In addition, before building the container, change the line `RUN useradd -ms /bin/bash userx -u 1001` such that the last number matches the uid of your user account on the host machine, resolving a volume mounting permissions issue.
+
+
 # Maui Simulation Setup for IT4Innovations
 This repository contains the setup of the Maui Scheduler to simulate the job scheduling of IT4Innovations' large-scale PBS based Salomon cluster. It has been used in our paper **Job Simulation for large-scale PBS based Clusters with the Maui Scheduler** (see section [Paper and Citation](#paper-and-citation) below) and is made available to enable other PBS based computing centers to run simulations. The following files are available:
 - `Dockerfile`: To create a Docker image with the Maui Scheduler environment. It includes PBS for satisfying the dependencies only, which does not need to run as a service.
